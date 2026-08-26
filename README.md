@@ -36,7 +36,6 @@ law-care-bd/
 ├── script.js           # Language toggle, mobile nav, scroll-reveal, hero entrance
 ├── robots.txt
 ├── sitemap.xml
-├── BUILD_SPEC.md       # Original build specification (do not delete)
 └── assets/
     ├── logo/           # Advocate's logo files (to be added by client)
     └── photos/         # Advocate headshot (to be added by client)
@@ -172,7 +171,7 @@ Per `BUILD_SPEC.md §12` — do **not** build these without client sign-off:
 
 ## 📖 Reference
 
-Full requirements, design decisions, and justifications are documented in [`BUILD_SPEC.md`](./BUILD_SPEC.md).
+Full requirements, design decisions, and justifications are in `BUILD_SPEC.md` (kept locally — gitignored, not committed to this repo).
 
 ---
 
