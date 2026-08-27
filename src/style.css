@@ -259,34 +259,93 @@ html:not([lang="en"]) h4 {
   transform: scaleX(1);
 }
 
-/* Language toggle */
+/* ============================================================
+   BILINGUAL SYSTEM (BN / EN)
+   ============================================================ */
+
+/* 1. Language Toggle button group (both buttons always visible) */
 .lang-toggle {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  border: 1px solid rgba(201,194,174,0.35);
-  border-radius: 3px;
+  border: 1px solid rgba(201, 194, 174, 0.4);
+  border-radius: 4px;
   overflow: hidden;
   flex-shrink: 0;
+  background: rgba(23, 36, 29, 0.5);
 }
 
 .lang-toggle button {
-  padding: 0.3rem 0.65rem;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0.32rem 0.75rem;
   font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: rgba(237,234,224,0.55);
+  color: rgba(237, 234, 224, 0.65);
+  background: transparent;
+  border: none;
+  cursor: pointer;
   transition: background var(--t-fast), color var(--t-fast);
 }
 
 .lang-toggle button.active {
-  background: var(--brass);
-  color: var(--paper-white);
+  background: var(--brass) !important;
+  color: var(--paper-white) !important;
 }
 
 .lang-toggle button:not(.active):hover {
-  background: rgba(255,255,255,0.09);
+  background: rgba(255, 255, 255, 0.12);
   color: var(--parchment);
 }
+
+/* 2. Content visibility switching (excludes .lang-toggle buttons) */
+html:not([lang="en"]) [data-lang="en"]:not(.lang-toggle button),
+html[lang="bn"] [data-lang="en"]:not(.lang-toggle button) {
+  display: none !important;
+}
+
+html[lang="en"] [data-lang="bn"]:not(.lang-toggle button) {
+  display: none !important;
+}
+
+/* 3. Navigation link label switching */
+.nav-link-en { display: none; }
+.nav-link-bn { display: inline; }
+html[lang="en"] .nav-link-en { display: inline !important; }
+html[lang="en"] .nav-link-bn { display: none !important; }
+
+/* 4. Navigation logo text typography */
+.nav-logo-name-en { font-family: 'Fraunces', serif; }
+.nav-logo-name-bn { font-family: 'Noto Serif Bengali', serif; }
+
+/* 5. Typography switching */
+html:not([lang="en"]) body {
+  font-family: 'Hind Siliguri', 'Libre Franklin', sans-serif;
+}
+
+html:not([lang="en"]) h1,
+html:not([lang="en"]) h2,
+html:not([lang="en"]) h3,
+html:not([lang="en"]) h4,
+html:not([lang="en"]) .hero-title,
+html:not([lang="en"]) .stat-number {
+  font-family: 'Noto Serif Bengali', 'Fraunces', serif;
+}
+
+html[lang="en"] body {
+  font-family: 'Libre Franklin', sans-serif;
+}
+
+html[lang="en"] h1,
+html[lang="en"] h2,
+html[lang="en"] h3,
+html[lang="en"] h4,
+html[lang="en"] .hero-title,
+html[lang="en"] .stat-number {
+  font-family: 'Fraunces', serif;
+}
+
 
 /* Hamburger */
 .nav-hamburger {
@@ -1339,8 +1398,9 @@ html:not([lang="en"]) .footer-brand-name {
   :root { --sec-v: var(--sec-v-mob); }
 
   /* Nav */
-  .nav-links  { display: none; }
-  .lang-toggle { display: none; }
+  .nav-links { display: none; }
+  .nav-inner > .lang-toggle { display: none; }
+  .nav-drawer .lang-toggle { display: inline-flex; }
   .nav-hamburger { display: flex; }
   .nav-drawer { display: flex; }
 
