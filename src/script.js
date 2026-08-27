@@ -13,7 +13,29 @@
 
   /* ── Language helpers ─────────────────────────────────────── */
   function getLang() {
-    return localStorage.getItem(LS_KEY) || DEFAULT_LANG;
+    // 1. URL parameter override (?lang=en or ?lang=bn)
+    try {
+      var params = new URLSearchParams(window.location.search);
+      var urlLang = params.get('lang');
+      if (urlLang === 'en' || urlLang === 'bn') {
+        localStorage.setItem(LS_KEY, urlLang);
+        return urlLang;
+      }
+    } catch (e) {}
+
+    // 2. Saved preference in localStorage (if user previously selected a language)
+    var saved = localStorage.getItem(LS_KEY);
+    if (saved === 'en' || saved === 'bn') {
+      return saved;
+    }
+
+    // 3. Auto-detect visitor's browser / phone language on first visit
+    var browserLang = (navigator.language || (navigator.languages && navigator.languages[0]) || navigator.userLanguage || '').toLowerCase();
+    if (browserLang.startsWith('en')) {
+      return 'en';
+    }
+
+    return DEFAULT_LANG; // 'bn'
   }
 
   /**
