@@ -279,7 +279,7 @@ html[lang="en"] [data-lang="bn"] {
 
 /* 2. OVERRIDE: Language Toggle buttons are ALWAYS visible */
 .lang-toggle {
-  display: inline-flex !important;
+  display: inline-flex;
   align-items: center;
   border: 1px solid rgba(201, 194, 174, 0.4);
   border-radius: 4px;
@@ -1439,11 +1439,12 @@ html:not([lang="en"]) .footer-brand-name {
   :root { --sec-v: var(--sec-v-mob); }
 
   /* Nav */
+  .nav-inner { justify-content: space-between; }
   .nav-links { display: none; }
-  .nav-inner > .lang-toggle { display: none; }
-  .nav-drawer .lang-toggle { display: inline-flex; }
-  .nav-hamburger { display: flex; }
+  .nav-inner > .lang-toggle { display: none !important; }
+  .nav-hamburger { display: flex; margin-left: auto; }
   .nav-drawer { display: flex; }
+  .nav-drawer .lang-toggle { display: inline-flex !important; margin-top: 1.25rem; }
 
   /* Hero */
   .hero-grid {
