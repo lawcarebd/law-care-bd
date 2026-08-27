@@ -1,5 +1,6 @@
 # Internal planning / build docs — not for the public repo
 BUILD_SPEC.md
+CONTENT.md
 
 # OS & system files
 .DS_Store
