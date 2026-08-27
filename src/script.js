@@ -25,6 +25,15 @@
     document.documentElement.lang = lang;
     localStorage.setItem(LS_KEY, lang);
 
+    // Sync browser tab title
+    var titleEl = document.getElementById('page-title');
+    if (titleEl) {
+      var newTitle = titleEl.getAttribute('data-title-' + lang);
+      if (newTitle) {
+        document.title = newTitle;
+      }
+    }
+
     // Sync all toggle buttons on this page
     document.querySelectorAll('.lang-toggle button').forEach(function (btn) {
       var active = btn.dataset.lang === lang;
