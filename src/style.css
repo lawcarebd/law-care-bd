@@ -804,24 +804,26 @@ html:not([lang="en"]) .trust-item-value {
 }
 
 /* ============================================================
-   PAGE HEADER — inner pages
+   PAGE HEADER — inner pages (consistent height across BN/EN)
    ============================================================ */
 .page-header {
   background: var(--forest);
   padding: 56px 0 52px;
-  border-bottom: 1px solid rgba(201,194,174,0.18);
+  border-bottom: 1px solid rgba(201, 194, 174, 0.18);
+  min-height: 195px;
+  display: flex;
+  align-items: center;
 }
 
-.page-header .docket-label {
-  margin-bottom: 0.75rem;
-  color: var(--brass);
+.page-header .container {
+  width: 100%;
 }
 
 .page-header h1 {
   font-family: 'Fraunces', serif;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2rem, 5vw, 2.75rem);
   color: var(--parchment);
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: 0.6rem;
 }
 
@@ -831,8 +833,10 @@ html:not([lang="en"]) .page-header h1 {
 
 .page-header .page-subtitle {
   font-size: var(--fs-base);
-  color: rgba(237,234,224,0.65);
-  max-width: 52ch;
+  line-height: 1.6;
+  color: rgba(237, 234, 224, 0.7);
+  max-width: 58ch;
+  min-height: 2.6em;
 }
 
 /* ============================================================
