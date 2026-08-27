@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  {# ── Primary SEO ──────────────────────────────────────────── #}
+  <title data-lang="bn">{{ titleBn }}</title>
+  <title data-lang="en">{{ titleEn }}</title>
+  <meta name="description" content="{{ description }}" />
+
+  {# ── Open Graph ───────────────────────────────────────────── #}
+  <meta property="og:type"             content="website" />
+  <meta property="og:url"              content="{{ site.domain }}{{ canonical }}" />
+  <meta property="og:title"            content="{{ ogTitle }}" />
+  <meta property="og:description"      content="{{ ogDescription }}" />
+  <meta property="og:image"            content="{{ site.domain }}/assets/og-image.jpg" />
+  <meta property="og:locale"           content="bn_BD" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  {# ── Favicon & Canonical ──────────────────────────────────── #}
+  <link rel="icon"             href="favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="canonical"        href="{{ site.domain }}{{ canonical }}" />
+
+  <meta name="author" content="Hasib" />
+
+  {# ── Fonts ────────────────────────────────────────────────── #}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Libre+Franklin:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@300;400;500;600;700&family=Hind+Siliguri:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- Designed & developed by Hasib -->
+
+{% include "nav.html" %}
+
+{{ content | safe }}
+
+{% include "footer.html" %}
+
+</body>
+</html>

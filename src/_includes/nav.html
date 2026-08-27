@@ -1,0 +1,79 @@
+{# ─────────────────────────────────────────────────────────────
+   NAVIGATION — written once here, included on every page.
+   The `pageId` front-matter variable drives the aria-current state:
+     home | about | services | contact
+───────────────────────────────────────────────────────────── #}
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="container nav-inner">
+
+    <a href="index.html" class="nav-logo" aria-label="Istiaque Ahamed Dehan — Home">
+      <svg class="nav-logo-seal" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="40" cy="40" r="37" fill="none" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 2.5"/>
+        <circle cx="40" cy="40" r="30" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+        <circle cx="40" cy="40" r="18" fill="none" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="40" cy="40" r="5"  fill="currentColor" opacity="0.85"/>
+        <line x1="40" y1="22" x2="40" y2="58" stroke="currentColor" stroke-width="1" opacity="0.45"/>
+        <line x1="22" y1="40" x2="58" y2="40" stroke="currentColor" stroke-width="1" opacity="0.45"/>
+      </svg>
+      <div class="nav-logo-text">
+        <span class="nav-logo-name-en">Istiaque Ahamed Dehan</span>
+        <span class="nav-logo-name-bn">ইশতিয়াক আহমেদ দিহান</span>
+      </div>
+    </a>
+
+    <ul class="nav-links" role="list">
+      <li>
+        <a href="index.html" {% if pageId == 'home' %}aria-current="page"{% endif %}>
+          <span class="nav-link-en">Home</span>
+          <span class="nav-link-bn">হোম</span>
+        </a>
+      </li>
+      <li>
+        <a href="about.html" {% if pageId == 'about' %}aria-current="page"{% endif %}>
+          <span class="nav-link-en">About</span>
+          <span class="nav-link-bn">পরিচিতি</span>
+        </a>
+      </li>
+      <li>
+        <a href="services.html" {% if pageId == 'services' %}aria-current="page"{% endif %}>
+          <span class="nav-link-en">Services</span>
+          <span class="nav-link-bn">সেবাসমূহ</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" {% if pageId == 'contact' %}aria-current="page"{% endif %}>
+          <span class="nav-link-en">Contact</span>
+          <span class="nav-link-bn">যোগাযোগ</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button data-lang="bn" aria-pressed="true"  aria-label="বাংলায় দেখুন">বাং</button>
+      <button data-lang="en" aria-pressed="false" aria-label="View in English">EN</button>
+    </div>
+
+    <button
+      id="nav-hamburger"
+      class="nav-hamburger"
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="nav-drawer">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div><!-- /nav-inner -->
+
+  <!-- Mobile drawer -->
+  <div id="nav-drawer" class="nav-drawer" role="dialog" aria-label="Mobile navigation">
+    <a href="index.html"><span class="nav-link-en">Home</span><span class="nav-link-bn">হোম</span></a>
+    <a href="about.html"><span class="nav-link-en">About</span><span class="nav-link-bn">পরিচিতি</span></a>
+    <a href="services.html"><span class="nav-link-en">Services</span><span class="nav-link-bn">সেবাসমূহ</span></a>
+    <a href="contact.html"><span class="nav-link-en">Contact</span><span class="nav-link-bn">যোগাযোগ</span></a>
+    <div class="lang-toggle" role="group" aria-label="Language selector">
+      <button data-lang="bn" aria-pressed="true">বাং</button>
+      <button data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+
+</nav><!-- /site-nav -->

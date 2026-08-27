@@ -29,9 +29,17 @@ npm-debug.log*
 .env.local
 .env.*
 
-# Build artifacts (none expected — this is a plain HTML site)
+# Build artifacts — Eleventy outputs here; deploy only dist/
 /dist/
 /build/
+
+# Node / npm
+node_modules/
+package-lock.json
+
+# Eleventy cache
+.cache/
+.eleventy-cache/
 
 # Temporary / scratch files
 *.tmp

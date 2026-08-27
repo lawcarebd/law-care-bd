@@ -1,0 +1,17 @@
+{
+  "name": "law-care-bd",
+  "version": "1.0.0",
+  "description": "Istiaque Ahamed Dehan — Advocate, Supreme Court of Bangladesh. Bilingual static site.",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "clean": "npx rimraf dist"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
