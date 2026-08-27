@@ -804,27 +804,20 @@ html:not([lang="en"]) .trust-item-value {
 }
 
 /* ============================================================
-   PAGE HEADER — inner pages (consistent height across BN/EN)
+   PAGE HEADER — inner pages
    ============================================================ */
 .page-header {
   background: var(--forest);
-  padding: 56px 0 52px;
+  padding: 44px 0 40px;
   border-bottom: 1px solid rgba(201, 194, 174, 0.18);
-  min-height: 195px;
-  display: flex;
-  align-items: center;
-}
-
-.page-header .container {
-  width: 100%;
 }
 
 .page-header h1 {
   font-family: 'Fraunces', serif;
-  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
   color: var(--parchment);
   line-height: 1.2;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 
 html:not([lang="en"]) .page-header h1 {
@@ -835,8 +828,8 @@ html:not([lang="en"]) .page-header h1 {
   font-size: var(--fs-base);
   line-height: 1.6;
   color: rgba(237, 234, 224, 0.7);
-  max-width: 58ch;
-  min-height: 2.6em;
+  max-width: 60ch;
+  margin: 0;
 }
 
 /* ============================================================
@@ -1006,75 +999,113 @@ html:not([lang="en"]) .page-header h1 {
   border-color: var(--forest);
 }
 
-.service-section {
-  padding-block: var(--sec-v);
+/* ============================================================
+   SERVICES PAGE — 17 PRACTICE AREAS IN 5 GROUPS
+   ============================================================ */
+.services-main {
+  background: var(--parchment);
+  padding: 48px 0 72px;
+}
+
+.svc-group {
+  margin-bottom: 3.5rem;
+}
+
+.svc-group:last-child {
+  margin-bottom: 1.5rem;
+}
+
+.svc-group-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.65rem;
   border-bottom: 1px solid var(--hairline);
-  scroll-margin-top: calc(var(--nav-h) + 54px);
 }
 
-.service-section:nth-child(even) { background: var(--paper-white); }
-
-.service-section-inner {
-  display: grid;
-  grid-template-columns: 1fr 280px;
-  gap: 4rem;
-  align-items: start;
-}
-
-.svc-content h2 {
-  font-size: clamp(1.5rem, 2.5vw, var(--fs-xl));
-  margin-bottom: 0.4rem;
-}
-
-.svc-area-code {
+.svc-group-label {
   font-size: var(--fs-xs);
   font-weight: 700;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  letter-spacing: 0.14em;
   color: var(--brass);
-  margin-bottom: 1.25rem;
 }
 
-.svc-content p {
-  font-size: var(--fs-base);
-  color: var(--ink-soft);
-  line-height: 1.8;
-  max-width: 58ch;
-  margin-bottom: 1rem;
-}
-
-.svc-content p:last-of-type { margin-bottom: 0; }
-
-.svc-aside {
-  background: var(--forest);
-  padding: 1.75rem 1.5rem;
-  color: var(--parchment);
-  position: sticky;
-  top: calc(var(--nav-h) + 58px);
-}
-
-.svc-aside-heading {
+.svc-group-title {
   font-family: 'Fraunces', serif;
-  font-size: var(--fs-md);
-  color: var(--parchment);
-  margin-bottom: 0.75rem;
+  font-size: var(--fs-xl);
+  font-weight: 600;
+  color: var(--ink);
 }
 
-html:not([lang="en"]) .svc-aside-heading {
+html:not([lang="en"]) .svc-group-title {
   font-family: 'Noto Serif Bengali', serif;
 }
 
-.svc-aside p {
-  font-size: var(--fs-sm);
-  color: rgba(237,234,224,0.75);
-  margin-bottom: 1.4rem;
-  line-height: 1.7;
+.svc-maritime-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--brass);
+  color: var(--parchment);
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  margin-left: 0.5rem;
 }
 
-.svc-aside .btn {
-  width: 100%;
-  justify-content: center;
+.svc-items-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+@media (max-width: 680px) {
+  .svc-items-grid { grid-template-columns: 1fr; }
+}
+
+.svc-item-card {
+  background: var(--paper-white);
+  border: 1px solid var(--hairline);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.svc-item-card:hover {
+  border-color: var(--brass);
+  box-shadow: 0 4px 16px rgba(23,36,29,0.08);
+}
+
+.svc-item-heading {
+  font-family: 'Fraunces', serif;
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 0.15rem;
+}
+
+html:not([lang="en"]) .svc-item-heading {
+  font-family: 'Noto Serif Bengali', serif;
+}
+
+.svc-item-bn-label {
   font-size: var(--fs-xs);
+  color: var(--brass);
+  margin-bottom: 0.6rem;
+}
+
+.svc-item-desc {
+  font-size: var(--fs-sm);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  flex: 1;
 }
 
 /* ============================================================
