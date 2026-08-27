@@ -1154,8 +1154,6 @@ html:not([lang="en"]) .svc-item-heading {
 
 .contact-card-icon svg { width: 22px; height: 22px; }
 
-.contact-card-body {}
-
 .contact-card-label {
   font-size: var(--fs-2xs);
   font-weight: 700;
