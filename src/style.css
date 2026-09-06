@@ -1445,11 +1445,11 @@ html:not([lang="en"]) .footer-brand-name {
   :root { --sec-v: var(--sec-v-mob); }
 
   /* Nav */
-  :root { --nav-h: 56px; }
+  .nav-inner { justify-content: space-between; height: 56px; }
   .nav-logo-seal { width: 30px; height: 30px; }
   .nav-logo-name-en { font-size: var(--fs-xs); }
   .nav-logo-name-bn { font-size: 0.65rem; }
-  .nav-inner { justify-content: space-between; }
+  .nav-logo { gap: 0.5rem; }
   .nav-links { display: none; }
   .nav-inner > .lang-toggle { display: none !important; }
   .nav-hamburger { display: flex; margin-left: auto; }
