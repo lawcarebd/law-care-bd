@@ -1445,7 +1445,9 @@ html:not([lang="en"]) .footer-brand-name {
   :root { --sec-v: var(--sec-v-mob); }
 
   /* Nav */
-  .nav-inner { justify-content: space-between; height: 56px; }
+  :root { --nav-h: 56px; }
+  .nav-logo-seal { width: 30px; height: 30px; }
+  .nav-inner { justify-content: space-between; }
   .nav-links { display: none; }
   .nav-inner > .lang-toggle { display: none !important; }
   .nav-hamburger { display: flex; margin-left: auto; }
@@ -1479,7 +1481,7 @@ html:not([lang="en"]) .footer-brand-name {
   /* About page */
   .about-bio-inner { grid-template-columns: 1fr; gap: 2.5rem; }
   .about-photo-col { position: static; }
-  .photo-frame { aspect-ratio: unset; height: auto; padding: 0; }
+  .photo-frame { aspect-ratio: unset; height: auto; padding: 1.25rem; }
   .photo-frame img { height: auto; object-fit: contain; object-position: top; }
   .ledger-row { grid-template-columns: 1fr; }
   .ledger-key { border-right: none; border-bottom: 1px solid var(--hairline); }
