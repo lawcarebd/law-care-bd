@@ -400,15 +400,10 @@ html[lang="en"] .stat-number {
   padding: 0.75rem var(--pad-side) 1.5rem;
   flex-direction: column;
   gap: 0.15rem;
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transition: max-height var(--t-med), opacity var(--t-med);
 }
 
 .nav-drawer.open {
-  max-height: 400px;
-  opacity: 1;
+  display: flex;
 }
 
 .nav-drawer a {
@@ -1442,7 +1437,7 @@ html:not([lang="en"]) .footer-brand-name {
    RESPONSIVE — 860px breakpoint (§4)
    ============================================================ */
 @media (max-width: 860px) {
-  :root { --sec-v: var(--sec-v-mob); }
+  :root { --sec-v: var(--sec-v-mob); --nav-h: 56px; }
 
   /* Nav */
   .nav-inner { justify-content: space-between; height: 56px; }
@@ -1453,7 +1448,8 @@ html:not([lang="en"]) .footer-brand-name {
   .nav-links { display: none; }
   .nav-inner > .lang-toggle { display: none !important; }
   .nav-hamburger { display: flex; margin-left: auto; }
-  .nav-drawer { display: flex; }
+  .nav-drawer { display: none; }
+  .nav-drawer.open { display: flex; }
   .nav-drawer .lang-toggle { display: inline-flex !important; margin-top: 1.25rem; }
 
   /* Hero */
